@@ -55,7 +55,7 @@ class CertificadoApp:
             bootstyle="link-info",
             cursor="hand2",
             command=lambda: webbrowser.open(
-                "https://seuusuario.github.io/certificados-tutorial"
+                "https://certify.otaviano.dev.br"
             ),
         ).pack(side=RIGHT)
 
