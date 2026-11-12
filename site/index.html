@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Certificados · Tutorial</title>
+    <meta name="description" content="Aprenda em 3 passos a gerar certificados em lote com o Gerador de Certificados PRO.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo">Cert<span>IFY</span></a>
+            <ul class="nav-links">
+                <li><a href="#como-funciona">Como funciona</a></li>
+                <li><a href="#requisitos">Requisitos</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#download" class="btn-nav">Baixar App</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Gere centenas de certificados <br><span class="gradient">em poucos cliques</span></h1>
+                <p>Automatize a criação de certificados personalizados a partir de uma planilha. Sem Photoshop, sem trabalho manual.</p>
+                <div class="hero-buttons">
+                    <a href="#como-funciona" class="btn btn-primary">Ver tutorial →</a>
+                    <a href="#download" class="btn btn-ghost">Baixar grátis</a>
+                    <button class="btn btn-gif" id="btn-ver-gif">
+                        <span class="play-icon">▶</span> Ver em ação
+                    </button>
+                </div>
+                <div class="hero-badges">
+                    <span>✅ 100% offline</span>
+                    <span>✅ Sem cadastro</span>
+                    <span>✅ Windows</span>
+                </div>
+            </div>
+            <div class="hero-mockup">
+                <!-- GIF animado APENAS aqui no hero -->
+                <div class="gif-frame">
+                    <img
+                        src="assets/animacao.gif"
+                        alt="Demonstração animada do Gerador de Certificados"
+                        loading="lazy"
+                        class="hero-gif"
+                        onclick="abrirModalGif()"
+                    >
+                    <span class="gif-badge">🔴 AO VIVO</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- COMO FUNCIONA (3 passos) -->
+    <section id="como-funciona" class="section">
+        <div class="container">
+            <h2 class="section-title">Como funciona</h2>
+            <p class="section-subtitle">Três passos simples separam você de um lote pronto.</p>
+
+            <div class="steps">
+
+                <!-- Passo 1 — PNG estático -->
+                <article class="step-card" data-step="1">
+                    <div class="step-icon">📁</div>
+                    <h3>Passo 1 · Arquivos Base</h3>
+                    <p>Escolha a imagem de fundo do certificado (template), a assinatura em PNG (opcional) e a planilha com os nomes.</p>
+                    <ul class="step-checklist">
+                        <li>Template em <code>.png</code>, <code>.jpg</code> ou <code>.jpeg</code></li>
+                        <li>Assinatura em <code>.png</code> com fundo transparente</li>
+                        <li>Planilha em <code>.xlsx</code> ou <code>.csv</code> com coluna <code>Nome</code></li>
+                    </ul>
+                    <img src="assets/passo1.png" alt="Passo 1 — seleção de arquivos" class="step-img" loading="lazy">
+                </article>
+
+                <!-- Passo 2 — PNG estático -->
+                <article class="step-card" data-step="2">
+                    <div class="step-icon">🛠</div>
+                    <h3>Passo 2 · Modelagem</h3>
+                    <p>Abra o modelador para arrastar o nome e a assinatura até a posição exata. Ajuste fonte e tamanho em tempo real.</p>
+                    <ul class="step-checklist">
+                        <li>Arraste os elementos com o mouse</li>
+                        <li>Use "Centralizar Nome" para alinhar automaticamente</li>
+                        <li>Sliders controlam o tamanho da fonte e da assinatura</li>
+                        <li>Clique em <strong>CONFIRMAR</strong> para salvar</li>
+                    </ul>
+                    <img src="assets/passo2.png" alt="Passo 2 — modelagem visual" class="step-img" loading="lazy">
+                </article>
+
+                <!-- Passo 3 — PNG estático -->
+                <article class="step-card" data-step="3">
+                    <div class="step-icon">🚀</div>
+                    <h3>Passo 3 · Geração em Lote</h3>
+                    <p>Clique em <strong>GERAR CERTIFICADOS</strong>. A barra de progresso mostra cada nome sendo processado.</p>
+                    <ul class="step-checklist">
+                        <li>Todos os arquivos vão para a pasta <code>Certificados_Gerados/</code></li>
+                        <li>Cada arquivo é nomeado como <code>Certificado_[Nome].png</code></li>
+                        <li>Sem travar a interface — você vê o progresso ao vivo</li>
+                    </ul>
+                    <img src="assets/passo3.png" alt="Passo 3 — geração em lote" class="step-img" loading="lazy">
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUISITOS -->
+    <section id="requisitos" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Antes de começar</h2>
+            <div class="requisitos-grid">
+                <div class="req-card">
+                    <h4>📋 Formato da planilha</h4>
+                    <p>A planilha precisa ter uma coluna chamada exatamente <code>Nome</code>.</p>
+                    <table class="req-table">
+                        <thead><tr><th>Nome</th><th>Curso</th></tr></thead>
+                        <tbody>
+                            <tr><td>Maria Silva</td><td>Python</td></tr>
+                            <tr><td>João Souza</td><td>Excel</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="req-card">
+                    <h4>🖼 Formato do template</h4>
+                    <p>Imagem em alta resolução (ideal: A4 paisagem ~3508×2480 px). Formatos aceitos:</p>
+                    <ul>
+                        <li><code>.png</code> · <code>.jpg</code> · <code>.jpeg</code></li>
+                    </ul>
+                    <p>💡 <strong>Dica:</strong> evite imagens muito escuras — o texto do nome é preto por padrão.</p>
+                </div>
+                <div class="req-card">
+                    <h4>✍️ Assinatura (opcional)</h4>
+                    <p>Use um PNG com <strong>fundo transparente</strong>. Ferramentas gratuitas:</p>
+                    <ul>
+                        <li><a href="https://www.remove.bg/" target="_blank" rel="noopener">remove.bg</a></li>
+                        <li><a href="https://www.photopea.com/" target="_blank" rel="noopener">Photopea</a></li>
+                    </ul>
+                </div>
+                <div class="req-card">
+                    <h4>💻 Sistema</h4>
+                    <p>Windows 10 ou superior.</p>
+                    <p>Sem necessidade de instalar Python — o app é distribuído como <code>.exe</code>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Perguntas frequentes</h2>
+            <div class="faq">
+                <details>
+                    <summary>Preciso saber programar?</summary>
+                    <p>Não. O app foi feito para ser usado por qualquer pessoa — basta seguir os três passos.</p>
+                </details>
+                <details>
+                    <summary>Meus dados são enviados para algum servidor?</summary>
+                    <p>Não. Todo o processamento acontece localmente no seu computador. O app funciona 100% offline.</p>
+                </details>
+                <details>
+                    <summary>Posso usar qualquer fonte?</summary>
+                    <p>Sim! No Passo 2, clique em <strong>Mudar Fonte</strong> e selecione um arquivo <code>.ttf</code> ou <code>.otf</code> baixado de sites como <a href="https://fonts.google.com/" target="_blank" rel="noopener">Google Fonts</a>.</p>
+                </details>
+                <details>
+                    <summary>Posso colocar o nome em outra cor?</summary>
+                    <p>Atualmente o texto é preto. Em breve adicionaremos seletor de cor no modelador.</p>
+                </details>
+                <details>
+                    <summary>Quantos certificados posso gerar de uma vez?</summary>
+                    <p>Não há limite rígido. Planilhas com centenas de linhas são processadas em poucos minutos.</p>
+                </details>
+                <details>
+                    <summary>Onde ficam os certificados gerados?</summary>
+                    <p>Na pasta <code>Certificados_Gerados/</code>, criada ao lado do executável do app.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="download" class="cta-section">
+        <div class="container">
+            <h2>Pronto para automatizar?</h2>
+            <p>Baixe o app, selecione seus arquivos e gere seu primeiro lote em menos de 2 minutos.</p>
+            <a href="assets/GeradorCertificados.exe" class="btn btn-large" download="GeradorCertificados.exe">
+                ⬇ Baixar Gerador de Certificados
+            </a>
+            <p class="cta-small">Versão 1.0 · Windows · ~15 MB</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 CertificadosPRO · Feito com 🎓</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DO GIF (tela cheia) -->
+    <div class="gif-modal" id="gif-modal" onclick="fecharModalGif(event)">
+        <button class="gif-modal-close" aria-label="Fechar" onclick="fecharModalGif()">×</button>
+        <img src="assets/animacao.gif" alt="Demonstração em tela cheia" class="gif-modal-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

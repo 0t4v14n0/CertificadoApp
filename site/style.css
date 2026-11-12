@@ -1,0 +1,353 @@
+/* ===== RESET + VARIÁVEIS ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg:          #1a1d21;
+    --bg-alt:      #22262b;
+    --bg-card:     #2a2f35;
+    --text:        #e4e6eb;
+    --text-muted:  #9aa0a6;
+    --primary:     #2e9e5b;
+    --primary-h:   #37b96b;
+    --accent:      #4a9eff;
+    --warning:     #ffb84d;
+    --border:      #3a4048;
+    --radius:      12px;
+    --shadow:      0 8px 30px rgba(0,0,0,.35);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(26,29,33,.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+}
+.logo {
+    font-size: 1.2rem; font-weight: 700; color: var(--text);
+    text-decoration: none; letter-spacing: -.5px;
+}
+.logo span { color: var(--primary); }
+.nav-links {
+    display: flex; gap: 28px; list-style: none; align-items: center;
+}
+.nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    font-size: .95rem; transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.btn-nav {
+    background: var(--primary); color: #fff !important;
+    padding: 8px 18px; border-radius: 8px; font-weight: 600;
+}
+.btn-nav:hover { background: var(--primary-h); }
+
+/* ===== HERO ===== */
+.hero {
+    padding: 80px 0 100px;
+    background: radial-gradient(circle at 70% 20%, rgba(46,158,91,.15), transparent 55%);
+}
+.hero-inner {
+    display: grid; grid-template-columns: 1.1fr .9fr;
+    gap: 60px; align-items: center;
+}
+.hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    line-height: 1.15; font-weight: 800; letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+.gradient {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; max-width: 500px; }
+.hero-buttons { display: flex; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+
+.btn {
+    display: inline-block; padding: 12px 26px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: .95rem;
+    transition: transform .15s, box-shadow .15s, background .2s;
+    cursor: pointer; border: none;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+    background: var(--primary); color: #fff;
+    box-shadow: 0 6px 18px rgba(46,158,91,.35);
+}
+.btn-primary:hover { background: var(--primary-h); }
+.btn-ghost {
+    border: 1px solid var(--border); color: var(--text); background: transparent;
+}
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+.btn-large { padding: 16px 36px; font-size: 1.05rem; }
+
+.hero-badges {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    font-size: .85rem; color: var(--text-muted);
+}
+.hero-mockup img {
+    width: 100%; border-radius: var(--radius);
+    box-shadow: var(--shadow); border: 1px solid var(--border);
+}
+
+/* ===== SEÇÕES ===== */
+.section { padding: 90px 0; }
+.section-alt { background: var(--bg-alt); }
+.section-title {
+    font-size: 2rem; font-weight: 800; letter-spacing: -.5px;
+    text-align: center; margin-bottom: 12px;
+}
+.section-subtitle {
+    text-align: center; color: var(--text-muted);
+    margin-bottom: 60px; font-size: 1.05rem;
+}
+
+/* ===== PASSOS ===== */
+.steps { display: grid; gap: 28px; }
+.step-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 36px;
+    display: grid; grid-template-columns: 1fr 320px;
+    gap: 40px; align-items: center;
+    transition: transform .2s, border-color .2s;
+}
+.step-card:hover { transform: translateY(-3px); border-color: var(--primary); }
+.step-icon {
+    font-size: 2.2rem; margin-bottom: 12px;
+}
+.step-card h3 {
+    font-size: 1.35rem; margin-bottom: 12px; letter-spacing: -.3px;
+}
+.step-card p { color: var(--text-muted); margin-bottom: 18px; }
+.step-checklist { list-style: none; display: grid; gap: 8px; }
+.step-checklist li {
+    position: relative; padding-left: 26px; font-size: .92rem; color: var(--text-muted);
+}
+.step-checklist li::before {
+    content: "✓"; position: absolute; left: 0;
+    color: var(--primary); font-weight: 700;
+}
+.step-img {
+    width: 100%; border-radius: 8px; border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,.3);
+}
+code {
+    background: var(--bg); color: var(--accent);
+    padding: 2px 7px; border-radius: 5px;
+    font-family: 'Consolas', monospace; font-size: .85em;
+}
+
+/* ===== REQUISITOS ===== */
+.requisitos-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;
+}
+.req-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 26px;
+}
+.req-card h4 { font-size: 1.05rem; margin-bottom: 12px; }
+.req-card p, .req-card li { color: var(--text-muted); font-size: .92rem; margin-bottom: 8px; }
+.req-card ul { padding-left: 18px; }
+.req-card a { color: var(--accent); text-decoration: none; }
+.req-card a:hover { text-decoration: underline; }
+
+.req-table {
+    width: 100%; margin-top: 12px; border-collapse: collapse; font-size: .88rem;
+}
+.req-table th, .req-table td {
+    padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border);
+}
+.req-table th { color: var(--text); font-weight: 600; }
+.req-table td { color: var(--text-muted); }
+
+/* ===== FAQ ===== */
+.faq { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+.faq details {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px 22px; cursor: pointer;
+    transition: border-color .2s;
+}
+.faq details[open] { border-color: var(--primary); }
+.faq summary {
+    font-weight: 600; list-style: none; position: relative; padding-right: 24px;
+}
+.faq summary::after {
+    content: "+"; position: absolute; right: 0; color: var(--primary);
+    font-size: 1.2rem; transition: transform .2s;
+}
+.faq details[open] summary::after { content: "−"; }
+.faq p { margin-top: 14px; color: var(--text-muted); font-size: .95rem; }
+
+/* ===== CTA FINAL ===== */
+.cta-section {
+    padding: 100px 0; text-align: center;
+    background: linear-gradient(135deg, rgba(46,158,91,.15), rgba(74,158,255,.1));
+}
+.cta-section h2 { font-size: 2.2rem; margin-bottom: 16px; letter-spacing: -.5px; }
+.cta-section p { color: var(--text-muted); max-width: 540px; margin: 0 auto 32px; }
+.cta-small { font-size: .82rem !important; margin-top: 18px !important; color: var(--text-muted); }
+
+/* ===== FOOTER ===== */
+.footer {
+    border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
+    color: var(--text-muted); font-size: .88rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .hero-buttons, .hero-badges { justify-content: center; }
+    .step-card { grid-template-columns: 1fr; }
+    .nav-links { gap: 16px; }
+    .nav-links li:not(:last-child) { display: none; }
+}
+
+.back-to-top.visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+.back-to-top:hover { transform: scale(1.1); }
+
+
+/* ============================================================
+   GIF — Hero + Modal  (passos continuam PNG)
+   ============================================================ */
+
+/* Moldura do GIF no hero */
+.gif-frame {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: transform .25s, border-color .25s;
+}
+.gif-frame:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: var(--primary);
+}
+
+.hero-gif {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+/* Badge "AO VIVO" */
+.gif-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(220, 53, 69, .9);
+    color: #fff;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: .55; }
+}
+
+/* Botão "Ver em ação" no hero */
+.btn-gif {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-gif:hover {
+    background: var(--primary);
+    color: #fff;
+}
+.play-icon {
+    font-size: .75rem;
+    display: inline-block;
+}
+
+/* ============================================================
+   MODAL DO GIF — tela cheia
+   ============================================================ */
+.gif-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    cursor: zoom-out;
+    animation: fadeIn .25s ease;
+}
+.gif-modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.gif-modal-img {
+    max-width: 95vw;
+    max-height: 90vh;
+    border-radius: var(--radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
+    border: 2px solid var(--border);
+    cursor: default;
+}
+
+.gif-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gif-modal-close:hover {
+    background: rgba(255, 255, 255, .25);
+    transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .btn-gif { display: none; }
+    .gif-badge { font-size: .65rem; }
+}

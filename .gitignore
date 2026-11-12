@@ -1,0 +1,24 @@
+# Ambientes Virtuais (Não subir a pasta pesada de bibliotecas)
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de Compilação do PyInstaller (Não subir o .exe nem o histórico)
+build/
+dist/
+*.spec
+
+# Pasta de Saída (Não subir os certificados gerados com dados reais)
+Certificados_Gerados/
+
+# Arquivos de Sistema e IDEs (VS Code, IntelliJ, etc)
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
