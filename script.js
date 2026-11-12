@@ -81,3 +81,18 @@ document.getElementById('btn-ver-gif')?.addEventListener('click', abrirModalGif)
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') fecharModalGif();
 });
+
+/* ============================================================
+   FECHAR MENU MOBILE AO CLICAR EM UM LINK
+   ============================================================ */
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Desmarca o checkbox para fechar o menu
+        if (menuToggle) {
+            menuToggle.checked = false;
+        }
+    });
+});
